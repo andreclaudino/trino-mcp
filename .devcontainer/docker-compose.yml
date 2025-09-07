@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /var/run/docker.sock:/var/run/docker-host.sock 
+      - ../..:/workspaces:cached
+    entrypoint: /usr/local/share/docker-init.sh
+    command: sleep infinity
+
+  trino:
+    image: docker.io/trinodb/trino:476
+    environment:
+      CATALOG_MANAGEMENT: dynamic
+    volumes:
+      - ../trino/catalog:/etc/trino/catalog
+      - ../trino/data:/data/
+

@@ -4,3 +4,17 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+actix-web = { version = "4.11.0", features = ["rustls"] }
+anyhow = { version = "1.0.99", features = ["backtrace"] }
+async-trait = "0.1.89"
+futures-core = "0.3.31"
+log = "0.4.28"
+markdown-tables = "0.1.0"
+minijinja = "2.12.0"
+pretty_env_logger = "0.5.0"
+prusto = "0.5.2"
+rmcp = "=0.6.1"
+rmcp-actix-web = "0.6.0"
+serde = { version = "1.0.219", features = ["derive"] }
+tokio = { version = "1.47.1", default-features = false, features = ["macros", "rt-multi-thread", "sync"] }
+toml = "0.9.5"
