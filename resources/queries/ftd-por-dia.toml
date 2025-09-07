@@ -1,0 +1,22 @@
+name = "ftd-por-dia"
+description = "Devolve o FTD granulariado por dia"
+query_template = "SELECT * FROM ftd GROUP BY date"
+
+[input_parameters.data_inicial]
+data_type = "string"
+description = "Data inicial à partir da qual FTD será retornado"
+required = true
+
+[input_parameters.data_final]
+data_type = "string"
+description = "Data final até onde o FTD será retornado"
+required = true
+
+[output_columns.ftd]
+data_type = "float"
+description = "Valor do FTD calculado para a data em questão"
+
+[output_columns.data]
+data_type = "date"
+description = "Valor do FTD calculado para a data em questão"
+
